@@ -20,6 +20,7 @@ jobs:
       - uses: actions/checkout@v3
 
       - name: Load secret
+        id: op-secrets
         uses: 1password/load-secrets-action@v1
         with:
           # Export loaded secrets as environment variables
@@ -29,7 +30,9 @@ jobs:
           SECRET: op://devops/teste/username
 
       - name: Print masked secret
-        run: echo "Secret: $SECRET"
+        run: | 
+          echo "$SECRET"
+          echo "Secret: ${{ op-secrets.outputs.SECRET }}"
         # Prints: Secret: ***   
           
 
