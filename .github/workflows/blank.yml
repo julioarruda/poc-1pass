@@ -32,7 +32,7 @@ jobs:
       - name: Print masked secret
         run: | 
           echo "$SECRET"
-          echo "Secret: ${{ op-secrets.outputs.SECRET }}"
+          
         # Prints: Secret: ***   
           
 
