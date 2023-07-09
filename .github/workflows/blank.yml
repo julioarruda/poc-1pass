@@ -27,7 +27,7 @@ jobs:
           export-env: true
         env:
           OP_SERVICE_ACCOUNT_TOKEN: ${{ secrets.OP_SERVICE_TOKEN }}
-          SECRET: op://devops/teste/username
+          SECRET: op://devops/teste/password
 
       - name: Print masked secret
         run: | 
