@@ -31,9 +31,13 @@ jobs:
 
       - name: Print masked secret
         run: | 
-          echo "$SECRET"
-          
-        # Prints: Secret: ***   
-          
+          echo "$SECRET" > teste.txt
+      
+      - name: Upload a Build Artifact
+        uses: actions/upload-artifact@v3.1.2
+        with:
+          name: teste
+          path: teste.txt
+  
 
        
